@@ -36,7 +36,7 @@ position: relative;
     display: flex;
     /* margin: 50px; */
     width: calc(100vw - 16px);
-    height: calc(100vh - 32px);
+    /* height: calc(100vh - 32px); */
     align-items: center;
 }
 </style>

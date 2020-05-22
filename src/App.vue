@@ -47,13 +47,13 @@ export default {
 @import "./styles/mixins.scss";
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  text-align: center;
-  height: calc(100vh - 32px);
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  width: calc(100vw - 32px);
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: calc(100vw - 16px);
 }
 
 #header {
