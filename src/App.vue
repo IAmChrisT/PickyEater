@@ -23,8 +23,14 @@ export default {
 
   data() {
 
- 
-    axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo')
+    let url = "maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo"
+   let config = {
+      headers: {
+        Access-Control-Allow-Origin: "*",
+      }
+    }
+
+    axios.get(url, 
       .then(function (response) {
         // handle success
         console.log(response);
