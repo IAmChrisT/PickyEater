@@ -23,11 +23,11 @@ export default {
   data() {
 
     axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo").then(response => {
-            console.log(response.data["results"]);
+            console.log(response);
           })
           .catch(e => {
             console.log("error"); 
-            console.log(e);
+            console.log(e.response);
           })
     
 
