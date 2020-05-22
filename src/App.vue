@@ -35,11 +35,8 @@ export default {
     .then(response => {
         this.result = response.body; 
         this.responseAvailable = true;
-        var jbody = response.body
-        let list=[];
-        $.each(jbody["results"], function(key, value) {
-          console.log(key + " " + value)
-        });
+        console.log(response.body);
+
     })
     .catch(err => {
         console.log(err);
