@@ -56,7 +56,7 @@ export default {
   width: calc(100vw - 32px);
 }
 
-header {
+#header {
  text-align: center;
   width: calc(100vw - 32px);
 }
