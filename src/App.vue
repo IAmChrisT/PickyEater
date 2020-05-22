@@ -31,7 +31,7 @@ export default {
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        console.log(JSON.stringify(error));
       })
       .finally(function () {
         // always executed
