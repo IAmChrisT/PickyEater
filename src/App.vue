@@ -12,7 +12,7 @@
 
 <script>
 import GameCardsStack from "./components/GameCardsStack";
-import axios from 'axios';
+const axios = require('axios').default;
 
 export default {
   name: "App",
@@ -22,19 +22,20 @@ export default {
 
   data() {
 
-    axios({
-      method: 'get',
-      url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo',
-      responseType: 'stream',
-      headers: {"accept":"*/*", "connection":"keep-alive","accept-encoding":"gzip, deflate, br"}
-    })
-      .then(response => {
-            console.log(response);
-    })
-    .catch(e => {
-            console.log("error"); 
-            console.log(e.response);
-          });
+ 
+    axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo')
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+        console.log("completed api")
+      });
 
 
           
