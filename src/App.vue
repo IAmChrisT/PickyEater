@@ -49,7 +49,7 @@ export default {
 #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     text-align: center;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-items: center;
