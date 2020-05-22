@@ -1,79 +1,71 @@
 <template>
-  <div id="app">
-		<GameCardsStack
-			:cards="visibleCards"
-			@cardAccepted="handleCardAccepted"
-			@cardRejected="handleCardRejected"
-			@cardSkipped="handleCardSkipped"
-			@hideCard="removeCardFromDeck"
-		/>
-  </div>
+  <section class="container">
+    <div class="fixed fixed--center" style="z-index: 3">
+      <Vue2InteractDraggable
+        v-if="isVisible"
+        :interact-out-of-sight-x-coordinate="500"
+        :interact-max-rotation="15"
+        :interact-x-threshold="200"
+        :interact-y-threshold="200"
+        @draggedRight="right"
+        class="rounded-borders card card--one">
+        <div class="flex flex--center" style="height: 100%">
+          <h1>{{current.text}}</h1>
+        </div>
+      </Vue2InteractDraggable>
+    </div>
+    <div
+      v-if="next"
+      class="rounded-borders card card--two fixed fixed--center"
+      style="z-index: 2">
+      <div class="flex flex--center" style="height: 100%">
+        <h1>{{next.text}}</h1>
+      </div>
+    </div>
+    <div
+      v-if="index + 2 < cards.length"
+      class="rounded-borders card card--three fixed fixed--center"
+      style="z-index: 1">
+      <div class="flex flex--center" style="height: 100%">
+        <h1>test</h1>
+      </div>
+    </div>
+  </section>
 </template>
-
 <script>
-import GameCardsStack from "./components/GameCardsStack";
-import axios from "axios"
+
+import { Vue2InteractDraggable } from 'vue2-interact'
 
 export default {
-  name: "App",
-  components: {
-    GameCardsStack,
-    axios
-  },
-
+  name: 'app',
+  components: { Vue2InteractDraggable },
   data() {
-
-   let url = "maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo"
-
-    axios.get(url)
-      .then(response => console.log(response))
-      .catch(function (error) {console.log(JSON.stringify(error));})
-      .finally(function () {console.log("completed api")});
-
-
-          
-    
-
-
-
     return {
-      visibleCards: ["Chiquitos", "Bella Italia", "Frankie & Bennies"]
-    };
+      isVisible: true,
+      index: 0,
+      cards: [
+        { text: 'one' },
+        { text: 'two' },
+        { text: 'three' },
+      ]
+    }
   },
-
-
+  computed: {
+    current() {
+      return this.cards[this.index]
+    },
+    next() {
+      return this.cards[this.index + 1]
+    }
+  },
   methods: {
-    handleCardAccepted() {
-      console.log("handleCardAccepted");
-    },
-    handleCardRejected() {
-      console.log("handleCardRejected");
-    },
-    handleCardSkipped() {
-      console.log("handleCardSkipped");
-    },
-    removeCardFromDeck() {
-      this.visibleCards.shift();
+    right() {
+      setTimeout(() => this.isVisible = false, 200)
+      setTimeout(() => {
+        this.index++
+        this.isVisible = true
+      }, 300)
     }
   }
-};
+}
 </script>
-
-<style lang="scss">
-@import "./styles/mixins.scss";
-
-#app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    text-align: center;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    width: calc(100vw - 16px);
-}
-
-#header {
- text-align: center;
-  width: calc(100vw - 32px);
-}
-</style>
