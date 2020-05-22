@@ -21,7 +21,7 @@ export default {
 
   data() {
     return {
-      visibleCards: ["Test", "Vue.js", "Webpack"]
+      visibleCards: ["Chiquitos", "Bella Italia", "Frankie & Bennies"]
     };
   },
 
