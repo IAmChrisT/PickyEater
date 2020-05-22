@@ -12,6 +12,7 @@
 
 <script>
 import GameCardsStack from "./components/GameCardsStack";
+import axios from 'axios';
 
 export default {
   name: "App",
