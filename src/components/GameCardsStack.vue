@@ -32,9 +32,11 @@ export default {
 
 <style lang="scss" scoped>
 .cards {
-  position: relative;
-  display: flex;
-  margin: 50px;
-  width: 300px;
+position: relative;
+    display: flex;
+    /* margin: 50px; */
+    width: calc(100vw - 16px);
+    height: calc(100vh - 32px);
+    align-items: center;
 }
 </style>

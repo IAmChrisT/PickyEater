@@ -25,6 +25,7 @@ export default {
     };
   },
 
+
   methods: {
     handleCardAccepted() {
       console.log("handleCardAccepted");
@@ -48,5 +49,10 @@ export default {
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
+  height: calc(100vh - 32px);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: calc(100vw - 32px);
 }
 </style>

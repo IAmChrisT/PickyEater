@@ -192,7 +192,7 @@ $fs-card-title: 1.125em;
   }
 
   display: flex;
-  max-height: 350px;
+  max-height: 500px;
   margin: auto;
   font-size: $fs-h2;
   font-weight: $fw-bold;
@@ -210,7 +210,7 @@ $fs-card-title: 1.125em;
   pointer-events: none;
   will-change: transform, opacity;
 
-  height: 100vw;
+  height: 800px;
 
   &.isCurrent {
     pointer-events: auto;
