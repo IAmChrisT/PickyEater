@@ -30,7 +30,7 @@ export default {
       }
     }
 
-    axios.get(url, 
+    axios.get(url, config)
       .then(function (response) {
         // handle success
         console.log(response);
