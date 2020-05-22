@@ -55,4 +55,9 @@ export default {
   justify-items: center;
   width: calc(100vw - 32px);
 }
+
+header {
+ text-align: center;
+  width: calc(100vw - 32px);
+}
 </style>
