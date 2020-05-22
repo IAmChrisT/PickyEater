@@ -12,12 +12,13 @@
 
 <script>
 import GameCardsStack from "./components/GameCardsStack";
-const axios = require('axios').default;
+import axios from "axios"
 
 export default {
   name: "App",
   components: {
-    GameCardsStack
+    GameCardsStack,
+    axios
   },
 
   data() {
