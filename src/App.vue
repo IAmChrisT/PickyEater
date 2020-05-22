@@ -21,26 +21,12 @@ export default {
 
   data() {
 
-    this.responseAvailable = false;
-    fetch("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo", {
-        "method": "GET",
-    })
-    .then(response => { 
-        if(response.ok){
-            return response.json()    
-        } else{
-            alert("Server returned " + response.status + " : " + response.statusText);
-        }                
-    })
-    .then(response => {
-        this.result = response.body; 
-        this.responseAvailable = true;
-        console.log(response.body);
+    axios.get(https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.5639745,-0.1409372&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDK-ZlG3tEsqG6-2H2-qYaEhjkIXvW8ETo).then(response => {
+            console.log(response.data);
+          })
 
-    })
-    .catch(err => {
-        console.log(err);
-    });
+
+
 
     return {
       visibleCards: ["Chiquitos", "Bella Italia", "Frankie & Bennies"]
